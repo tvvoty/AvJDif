@@ -4,8 +4,8 @@ import MeCab
 
 
 #put there absolute path of the file with double slashes eg 'E:\PythonProjects\pythonProject1\Anime frec list\[Kamigami] Barakamon - 01 [1280×720 x264 AAC Sub(Chs,Jap)].ass'
-sub_file = 'put there path of the file'
-subtitles = parser.parse('E:\\PythonProjects\\pythonProject1\\Anime frec list\\Psycho-Pass_001.srt')
+sub_file = 'F:\GitHub\PythonLearning\Anime frec list\\[Kamigami] Barakamon - 01 [1280×720 x264 AAC Sub(Chs,Jap)].ass'
+subtitles = parser.parse(sub_file)
 
 #test, works
 # for subtitle in subtitles:
