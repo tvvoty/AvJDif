@@ -1,5 +1,5 @@
 from pysubparser import parser
-import shit
+import freq_dic
 import MeCab
 
 
@@ -20,12 +20,14 @@ def find_avg_diff():
     wordcount = 0
     # for every line in the file
     for subtitle in subtitles:
-        print(subtitle.text.encode("utf-8"))
+        print(subtitle.text)
+        # print(subtitle.text.encode("utf-8"))
         parsed_line = wakati.parse(subtitle.text).split()
-        print(parsed_line.encode("utf-8"))
+        # print(parsed_line.encode("utf-8"))
         for word in parsed_line:
-            print(word.encode("utf-8"))
-            for entry in shit.shitlist:
+            print(word)
+            # print(word.encode("utf-8"))
+            for entry in freq_dic.freq_list:
                 if word == entry[0]:
                     wordcount += 1
                     sum_of_diff += entry[2]
