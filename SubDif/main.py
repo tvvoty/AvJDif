@@ -7,27 +7,26 @@ import os
 wakati = MeCab.Tagger("-Owakati")
 
 
-
 # dir with subtitles
 os.chdir("F:\GitHub\AvJDif\SubDif\subs\Barakamon")
+
 
 def find_avg_diff_of_folder():
     sum_of_diff = 0
     wordcount = 0
-    for filename in os.listdir(os.getcwd()):
-        filepath = (os.path.join(os.getcwd(), filename)
-        subtitles = parser.parse(filepath)
+    for file in os.listdir(os.getcwd()):
+        file_path = (os.path.join(os.getcwd(), file))
+        print(file_path)
+        subtitles = parser.parse(file_path)
+        print(subtitles)
 
-        # for every line in the file
+
         for subtitle in subtitles:
             print(subtitle.text)
-            # print(subtitle.text.encode("utf-8"))
             parsed_line = wakati.parse(subtitle.text).split()
             print(parsed_line)
-            # print(parsed_line.encode("utf-8"))
             for word in parsed_line:
                 print(word)
-                # print(word.encode("utf-8"))
                 for entry in freq_dic.freq_list:
                     if word == entry[0]:
                         wordcount += 1
@@ -43,11 +42,11 @@ find_avg_diff_of_folder()
 
 
 
-def dum():
-    # test
-    # for subtitle in subtitles:
-    #     print(subtitle.text)
-    pass
+# def dum():
+#     # test
+#     # for subtitle in subtitles:
+#     #     print(subtitle.text)
+#     pass
 
 
 
@@ -57,24 +56,20 @@ def dum():
 
 
 # old function for one file
-def find_avg_diff():
-    sum_of_diff = 0
-    wordcount = 0
-    # for every line in the file
-    for subtitle in subtitles:
-        print(subtitle.text)
-        # print(subtitle.text.encode("utf-8"))
-        parsed_line = wakati.parse(subtitle.text).split()
-        print(parsed_line)
-        # print(parsed_line.encode("utf-8"))
-        for word in parsed_line:
-            print(word)
-            # print(word.encode("utf-8"))
-            for entry in freq_dic.freq_list:
-                if word == entry[0]:
-                    wordcount += 1
-                    sum_of_diff += entry[2]
-                    print(entry[2])
-    print(sum_of_diff)
-    print(wordcount)
-    print(sum_of_diff / wordcount)
+# def find_avg_diff():
+#     sum_of_diff = 0
+#     wordcount = 0
+#     for subtitle in subtitles:
+#         print(subtitle.text)
+#         parsed_line = wakati.parse(subtitle.text).split()
+#         print(parsed_line)
+#         for word in parsed_line:
+#             print(word)
+#             for entry in freq_dic.freq_list:
+#                 if word == entry[0]:
+#                     wordcount += 1
+#                     sum_of_diff += entry[2]
+#                     print(entry[2])
+#     print(sum_of_diff)
+#     print(wordcount)
+#     print(sum_of_diff / wordcount)
