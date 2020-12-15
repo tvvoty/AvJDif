@@ -1,5 +1,6 @@
 from pysubparser import parser
 import freq_dic
+import freq_dic_hashtable
 import MeCab
 import os
 
@@ -9,6 +10,39 @@ wakati = MeCab.Tagger("-Owakati")
 
 # dir with subtitles
 os.chdir("F:\GitHub\AvJDif\SubDif\subs\Barakamon")
+
+
+def find_avg_diff_of_folder_with_hashtable():
+    sum_of_diff = 0
+    wordcount = 0
+    for file in os.listdir(os.getcwd()):
+        file_path = (os.path.join(os.getcwd(), file))
+        print(file_path)
+        subtitles = parser.parse(file_path)
+        print(subtitles)
+
+
+        for subtitle in subtitles:
+            print(subtitle.text)
+            parsed_line = wakati.parse(subtitle.text).split()
+            print(parsed_line)
+            for word in parsed_line:
+                print(word)
+                if word in freq_dic_hashtable.freq_hashtable:
+                    wordcount += 1
+                    sum_of_diff += freq_dic_hashtable.freq_hashtable[word]
+                    print(freq_dic_hashtable.freq_hashtable[word])
+    print(sum_of_diff)
+    print(wordcount)
+    print(sum_of_diff / wordcount)
+
+find_avg_diff_of_folder_with_hashtable()
+
+
+
+
+
+
 
 
 def find_avg_diff_of_folder():
@@ -35,9 +69,6 @@ def find_avg_diff_of_folder():
     print(sum_of_diff)
     print(wordcount)
     print(sum_of_diff / wordcount)
-
-find_avg_diff_of_folder()
-
 
 
 
