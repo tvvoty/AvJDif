@@ -7,9 +7,11 @@ import os
 # parse subtitles with MeCab
 wakati = MeCab.Tagger("-Owakati")
 
+main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
+with open ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation\\stats_log.txt", w, encoding='utf-8') as f:
+    f.write(f'anime_avg_diff_table = ')
 
-# dir with subtitles
-os.chdir("F:\GitHub\AvJDif\SubDif\subs\Barakamon")
+
 
 
 def find_avg_diff_of_folder_with_hashtable():
