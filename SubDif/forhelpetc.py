@@ -1,11 +1,14 @@
 import os
 
 # help(os)
+a = "a"
+b="b"
+c="c"
+d="d"
+with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.txt", mode='w', encoding='utf-8') as f:
+    f.write('anime_avg_diff_table = ')
 
-main_folder = ("F:\GitHub\AvJDif\SubDif\sub_archive_simulation")
+print('eee')
 
-for folder in os.listdir(main_folder):
-    sub_folder_path = f'{main_folder}\\{folder}'
-    os.chdir(sub_folder_path)
-    print(folder)
-    print(sub_folder_path)
+with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.txt", mode='w', encoding='utf-8') as f:
+    f.write(f'[{a},{b},{c},{d}], ')
