@@ -2,8 +2,10 @@ import shutil
 import glob
 import os
 
-main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
-# main_folder = ("F:\\A")
+# main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
+main_folder = ("F:\Afordearch")
+# os.chdir(main_folder)
+# print(os.listdir())
 
 def unzip_all_subfolders():
     for folder in os.listdir(main_folder):
@@ -13,10 +15,15 @@ def unzip_all_subfolders():
         # print(sub_folder_path)
 
         for zip_file in glob.glob(f"{os.getcwd()}\\*.zip"):
-            shutil.unpack_archive(zip_file, os.getcwd())
-            # file_path = (os.path.join(os.getcwd(), file))
-            os.remove(zip_file)
-            print(zip_file)
+            try:
+                shutil.unpack_archive(zip_file, os.getcwd())
+                # file_path = (os.path.join(os.getcwd(), file))
+                os.remove(zip_file)
+                print(zip_file)
+            except:
+
+                print("Error")
+                os.remove(zip_file)
 
 unzip_all_subfolders()
 
