@@ -24,19 +24,22 @@ def find_avg_diff_of_folder_with_hashtable():
         for file in glob.glob(f"{os.getcwd()}\\**\\**.**", recursive=True):
             file_path = (os.path.join(os.getcwd(), file))
             print(file_path)
-            subtitles = parser.parse(file_path)
-            # print(subtitles)
+            try:
+                subtitles = parser.parse(file_path)
+                # print(subtitles)
 
-            for subtitle in subtitles:
-                # print(subtitle.text)
-                parsed_line = wakati.parse(subtitle.text).split()
-                # print(parsed_line)
-                for word in parsed_line:
-                    # print(word)
-                    if word in freq_dic_hashtable.freq_hashtable:
-                        wordcount += 1
-                        sum_of_diff += freq_dic_hashtable.freq_hashtable[word]
-                        # print(freq_dic_hashtable.freq_hashtable[word])
+                for subtitle in subtitles:
+                    # print(subtitle.text)
+                    parsed_line = wakati.parse(subtitle.text).split()
+                    # print(parsed_line)
+                    for word in parsed_line:
+                        # print(word)
+                        if word in freq_dic_hashtable.freq_hashtable:
+                            wordcount += 1
+                            sum_of_diff += freq_dic_hashtable.freq_hashtable[word]
+                            # print(freq_dic_hashtable.freq_hashtable[word])
+            except:
+                print("Wrong file format.")
         # print(sum_of_diff)
         # print(wordcount)
         print(sum_of_diff / wordcount)
