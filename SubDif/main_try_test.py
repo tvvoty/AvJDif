@@ -47,7 +47,9 @@ def find_avg_diff_of_folder_with_hashtable():
             f.write(f'"{folder}" : [{sum_of_diff},{wordcount},{sum_of_diff / wordcount}]' + ", \n")
         except:
             print("Error, prolly division by zero, prolly not important.")
-            f.write(f'"{folder}" : [{sum_of_diff},{wordcount},\"Error in av_dif func in line 47\"]' + ", ")
+            f.write(f'"{folder}" : [{sum_of_diff},{wordcount},\"Error in av_dif func in line 47\"]' + ", \n")
+
+
 
 
 
@@ -56,10 +58,16 @@ wakati = MeCab.Tagger("-Owakati")
 
 main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
 # main_folder = ("F:\Afordearch")
-with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.txt", mode='w', encoding='utf-8') as f:
+with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.py", mode='w', encoding='utf-8') as f:
     f.write('anime_avg_diff_table = {')
 
     find_avg_diff_of_folder_with_hashtable()
+
+with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.py", 'rb+') as f:
+    f.seek(-4, os.SEEK_END)
+    f.truncate()
+
+with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.py", mode='a', encoding='utf-8') as f:
     f.write('}')
 
 

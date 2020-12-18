@@ -15,8 +15,9 @@ folder = "nya"
 
 anime_avg_diff_table = {"Barakamon" : [64398385,28217,2282.25484636921],
 "Barakamonwithzip" : [70471757,30047,2345.384131527274],
+"empty" : [0,0,"Error in av_dif func in line 47"],
 "SSR" : [37801167,17446,2166.7526653674195],
-"tsurezure" : [118850576,60931,1950.576488158737] 
-}
+"tsurezure" : [118850576,60931,1950.576488158737]}
 
-print(anime_avg_diff_table)
+for p, d in anime_avg_diff_table.items():
+    print( d)
