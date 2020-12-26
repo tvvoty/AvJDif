@@ -1,11 +1,13 @@
-from pysubparser import parser
-import freq_dic
-import freq_dic_hashtable
-import MeCab
+# main file with all the functions
+
+from pysubparser import parser  # parses subtitle files, now that i think about it, it's prolly unnecesary since
+# mecab parses every thing anyway
+import freq_dic_hashtable  # A hash table with difficulty of words, created from
+import MeCab  # Parses japanese text
 import os
 import glob
 
-
+# finds avg_diff of every title in a folder with nested filders
 def find_avg_diff_of_folder_with_hashtable():
     for folder in os.listdir(main_folder):
         print(folder)
@@ -56,8 +58,8 @@ def find_avg_diff_of_folder_with_hashtable():
 # parse subtitles with MeCab
 wakati = MeCab.Tagger("-Owakati")
 
-main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
-# main_folder = ("F:\Afordearch")
+# main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
+main_folder = ("F:\Afordearch")
 with open("F:\\GitHub\\AvJDif\\SubDif\\stats_log.py", mode='w', encoding='utf-8') as f:
     f.write('anime_avg_diff_table = {')
 
