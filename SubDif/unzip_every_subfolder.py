@@ -1,9 +1,11 @@
+# file to unzip every zip in a folder
 import shutil
 import glob
 import os
 
 # main_folder = ("F:\\GitHub\\AvJDif\\SubDif\\sub_archive_simulation")
-main_folder = ("F:\Afordearch")
+main_folder = ("C:\\Users\\Windows 8.1\\Desktop\\csstemp")
+# main_folder = ("F:\Afordearch")
 # os.chdir(main_folder)
 # print(os.listdir())
 

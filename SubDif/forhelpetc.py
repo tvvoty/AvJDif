@@ -1,3 +1,5 @@
+# file for testing purposes
+
 folder = "nya"
 # anime_avg_diff_table = [["Barakamon", 64398385, 28217, 2282], \n
 #                         ["Barakamonwithzip", 471757, 30047, 2345],\n

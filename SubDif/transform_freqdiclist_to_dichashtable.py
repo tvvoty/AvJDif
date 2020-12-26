@@ -1,3 +1,5 @@
+# converts a nested list dic into a hashtable
+
 import freq_dic
 
 freq_hashtable = {entry[0]: entry[2] for entry in freq_dic.freq_list}
